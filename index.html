@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Sheetup Social Chat for Anonymous</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <!-- Chrome, Firefox OS and Opera -->
+  <meta name="theme-color" content="#5db5e5">
+  <!-- Windows Phone -->
+  <meta name="msapplication-navbutton-color" content="#5db5e5">
+  <!-- iOS Safari -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="#5db5e5">
+  <meta name="copyright" content="">
+  <meta name="description" content="Sheetup social chat">
+  <meta name="keywords" content="Chat,Social Media,Mobile Chat,App Chat">
+  <meta name="author" content="mascode.id">
+  <meta name="robots" content="indez,follow">
+  <meta name="DC.title" content="Aplikasi Chat Anonymous, untuk menjaga kerahasiaan">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="sheetup/images/logo_x.png">
+  <!-- Css Material -->
+  <link rel="stylesheet" href="sheetup/css/material.min.css">
+  <!-- Css Sheetup -->
+  <link rel="stylesheet" href="sheetup/css/sheetup.css">
+  <!-- Google Font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+    /* loading */
+	$(window).on("load", function (e) {
+		$("#loading-box").fadeOut("slow");
+		$("#loading").fadeOut("slow"); 
+		$(".uil-ripple").fadeOut("slow");
+    $(".content").css("display", "inline");
+	})
+  </script>
+<!--
+  <style media="screen">
+    .mdl-cell {
+    box-sizing: border-box;
+    background-color: #BDBDBD;
+    height: 200px;
+    padding-left: 8px;
+    padding-top: 4px;
+    color: white;
+    }
+    .mdl-grid:first-of-type .mdl-cell {
+    height: 50px;
+    }
+  </style> -->
+</head>
+<body>
+  <div id="loading-box">
+    <svg id="loading">
+      <g>
+        <path class="ld-l" fill="#8293ff" d="M43.6,33.2h9.2V35H41.6V15.2h2V33.2z" />
+        <path class="ld-o" fill="#8293ff" d="M74.7,25.1c0,1.5-0.3,2.9-0.8,4.2c-0.5,1.3-1.2,2.4-2.2,3.3c-0.9,0.9-2,1.6-3.3,2.2
+      c-1.3,0.5-2.6,0.8-4.1,0.8s-2.8-0.3-4.1-0.8c-1.3-0.5-2.4-1.2-3.3-2.2s-1.6-2-2.2-3.3C54.3,28,54,26.6,54,25.1s0.3-2.9,0.8-4.2
+      c0.5-1.3,1.2-2.4,2.2-3.3s2-1.6,3.3-2.2c1.3-0.5,2.6-0.8,4.1-0.8s2.8,0.3,4.1,0.8c1.3,0.5,2.4,1.2,3.3,2.2c0.9,0.9,1.6,2,2.2,3.3
+      C74.4,22.2,74.7,23.6,74.7,25.1z M72.5,25.1c0-1.2-0.2-2.3-0.6-3.3c-0.4-1-0.9-2-1.6-2.8c-0.7-0.8-1.6-1.4-2.6-1.9
+      c-1-0.5-2.2-0.7-3.4-0.7c-1.3,0-2.4,0.2-3.4,0.7c-1,0.5-1.9,1.1-2.6,1.9c-0.7,0.8-1.3,1.7-1.6,2.8c-0.4,1-0.6,2.1-0.6,3.3
+      c0,1.2,0.2,2.3,0.6,3.3c0.4,1,0.9,2,1.6,2.7c0.7,0.8,1.6,1.4,2.6,1.9c1,0.5,2.2,0.7,3.4,0.7c1.3,0,2.4-0.2,3.4-0.7
+      c1-0.5,1.9-1.1,2.6-1.9c0.7-0.8,1.3-1.7,1.6-2.7C72.4,27.4,72.5,26.3,72.5,25.1z" />
+        <path class="ld-a" fill="#8293ff" d="M78.2,35H76l8.6-19.8h2L95.1,35h-2.2l-2.2-5.2H80.4L78.2,35z M81.1,27.9h8.7l-4.4-10.5L81.1,27.9z"
+        />
+        <path class="ld-d" fill="#8293ff" d="M98,15.2h6.6c1.2,0,2.5,0.2,3.7,0.6c1.2,0.4,2.4,1,3.4,1.9c1,0.8,1.8,1.9,2.4,3.1s0.9,2.7,0.9,4.3
+      c0,1.7-0.3,3.1-0.9,4.3s-1.4,2.3-2.4,3.1c-1,0.8-2.1,1.5-3.4,1.9c-1.2,0.4-2.5,0.6-3.7,0.6H98V15.2z M100,33.2h4
+      c1.5,0,2.8-0.2,3.9-0.7c1.1-0.5,2-1.1,2.8-1.8c0.7-0.8,1.3-1.6,1.6-2.6s0.5-2,0.5-3c0-1-0.2-2-0.5-3c-0.4-1-0.9-1.8-1.6-2.6
+      c-0.7-0.8-1.6-1.4-2.8-1.8c-1.1-0.5-2.4-0.7-3.9-0.7h-4V33.2z" />
+        <path class="ld-i" fill="#8293ff" d="M121.2,35h-2V15.2h2V35z" />
+        <path class="ld-n" fill="#8293ff" d="M140.5,32.1L140.5,32.1l0.1-16.9h2V35h-2.5l-11.5-17.1h-0.1V35h-2V15.2h2.5L140.5,32.1z"
+        />
+        <path class="ld-g" fill="#8293ff" d="M162.9,18.8c-0.7-0.7-1.5-1.3-2.5-1.7c-1-0.4-2-0.6-3.3-0.6c-1.3,0-2.4,0.2-3.4,0.7s-1.9,1.1-2.6,1.9
+      c-0.7,0.8-1.3,1.7-1.6,2.8c-0.4,1-0.6,2.1-0.6,3.3c0,1.2,0.2,2.3,0.6,3.3c0.4,1,0.9,2,1.6,2.7c0.7,0.8,1.6,1.4,2.6,1.9
+      s2.2,0.7,3.4,0.7c1.1,0,2.1-0.1,3.1-0.4c0.9-0.2,1.7-0.5,2.3-0.9v-6h-4.6v-1.8h6.6v9c-1.1,0.7-2.2,1.1-3.5,1.5
+      c-1.3,0.3-2.5,0.5-3.9,0.5c-1.5,0-2.9-0.3-4.1-0.8s-2.4-1.2-3.3-2.2c-0.9-0.9-1.6-2-2.1-3.3s-0.8-2.7-0.8-4.2s0.3-2.9,0.8-4.2
+      c0.5-1.3,1.2-2.4,2.2-3.3c0.9-0.9,2-1.6,3.3-2.2c1.3-0.5,2.6-0.8,4.1-0.8c1.6,0,3,0.2,4.1,0.7s2.2,1.1,3,2L162.9,18.8z" />
+      </g>
+    </svg>
+
+
+
+    <svg width='182px' height='182px' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid"
+      class="uil-ripple">
+      <rect x="0" y="0" width="100" height="100" fill="none" class="bk"></rect>
+      <g>
+        <animate attributeName="opacity" dur="4s" repeatCount="indefinite" begin="0s" keyTimes="0;0.33;1" values="1;1;0"></animate>
+        <circle cx="50" cy="50" r="40" stroke="#eeeeee" fill="none" stroke-width="2" stroke-linecap="round">
+          <animate attributeName="r" dur="4s" repeatCount="indefinite" begin="0s" keyTimes="0;0.33;1" values="0;22;44"></animate>
+        </circle>
+      </g>
+      <g>
+        <animate attributeName="opacity" dur="4s" repeatCount="indefinite" begin="2s" keyTimes="0;0.33;1" values="1;1;0"></animate>
+        <circle cx="50" cy="50" r="40" stroke="#eeeeee" fill="none" stroke-width="2" stroke-linecap="round">
+          <animate attributeName="r" dur="4s" repeatCount="indefinite" begin="2s" keyTimes="0;0.33;1" values="0;22;44"></animate>
+        </circle>
+      </g>
+    </svg>
+  </div>
+    
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="content">
+      <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header nav_bar" style="position: fixed;">
+          <div class="nav_section">
+            <ul class="menu_section">
+              <li><a href="#what_is" class="goto">What is this ?</a></li>
+              <li><a href="#features" class="goto">Features</a></li>
+            </ul>
+          </div>
+          <div class="nav_section nav_section--center">
+            <a href="#home" class="goto">
+              <img class="logo" src="sheetup/images/logo.svg" alt="logo sheetup">
+            </a>
+          </div>
+          <div class="nav_section">
+            
+          </div>
+        </header>
+        <main class="mdl-layout__content">
+          <div id="home">
+            <br>
+            <br>
+            <div class="background-home">
+              <div class="img-home">
+                <img src="sheetup/images/sheetup_home.png" alt="" class="img">
+              </div>
+              <div class="icon-home">
+                <svg class="icon-sheetup" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 2254 2257" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <defs>
+                    <linearGradient id="id0" gradientUnits="userSpaceOnUse" x1="483.761" y1="1643.64" x2="1770.67" y2="613.166">
+                    <stop offset="0" style="stop-opacity:1; stop-color:#5DB5E5"/>
+                    <stop offset="1" style="stop-opacity:1; stop-color:#8293FF"/>
+                    </linearGradient>
+                  </defs>
+                  <g id="Layer_x0020_1">
+                    <metadata id="CorelCorpID_0Corel-Layer"/>
+                    <path class="fil0" d="M1934 1914l280 338 -253 0c-287,1 -574,9 -861,2 -612,-14 -1100,-515 -1100,-1127 0,-622 505,-1127 1127,-1127 623,0 1127,505 1127,1127 0,299 -117,580 -320,787z"/>
+                    <path class="fil1" d="M1231 375l-153 331 -38 -66 -219 126c-36,21 -62,49 -78,87 -16,40 -1,81 19,117 21,35 50,69 92,75 41,6 79,-2 114,-23l143 -82c47,-27 97,-45 150,-53 53,-8 105,-6 156,7 52,12 100,36 143,68 47,35 84,81 114,132 29,50 50,106 57,164 6,54 3,107 -12,158 -14,52 -38,98 -71,140 -34,42 -75,77 -121,104l-362 209c-25,14 -52,19 -79,12 -28,-7 -48,-26 -62,-50l-31 -53c-14,-25 -20,-52 -13,-79 8,-28 26,-49 51,-63l307 -177 31 55 153 -331 -363 -33 31 54 -88 50c-46,27 -97,45 -150,53 -52,8 -105,6 -156,-8 -52,-13 -100,-37 -143,-69 -47,-35 -85,-80 -114,-131 -30,-51 -51,-107 -57,-165 -6,-53 -3,-106 12,-158 15,-50 39,-97 72,-138 34,-42 74,-77 121,-104l219 -126 -38 -66 363 33z"/>
+                  </g>
+                </svg> 
+                <p>Lorem ipsum dolor set <br>amet lorem ipsum dolor set</p>
+                <a href="#">
+                  <img src="https://play.google.com/intl/en/badges/images/generic/en_badge_web_generic.png" alt="Android Download" class="android-download">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div id="what_is">
+            <div class="mdl-grid background-what-is">
+            <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet">
+              <div class="title">
+                What is a sheetup ?
+              </div>
+            </div>
+            <div class="mdl-cell mdl-cell--3-offset-desktop mdl-cell--6-col-desktop mdl-cell--12-col-tablet">
+              <div class="text">
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+                  reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                  Excepteur sint occaecat cupidatat non proident.
+                </p>
+              </div>
+            </div>
+            <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet">
+              <div class="mdl-cell mdl-cell--5-offset-desktop mdl-cell--2-col-desktop mdl-cell--12-col-tablet">
+                <div class="box-bounce">
+                  <div class="line"></div>
+                  <div class="line-2"></div>
+                  <div class="line-3"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div id="features">
+            <div class="mdl-grid">
+              <div class="mdl-cell mdl-cell--12-col">
+                <div class="title-features">
+                  Features in sheetup !
+                </div>
+              </div>
+            </div>
+            <div class="mdl-grid box-features-1">
+              <div class="box-line">
+                <div class="line"></div>
+              </div>
+              <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--12-col-tablet mdl-cell--order-2-desktop">
+                <div class="box-image-features">
+                  <div class="worm">
+                    <div class="illustration_1">
+                      <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="80%" viewBox="0 0 3959 2449" >
+                        <g id="Layer_x0020_1">
+			  <metadata id="CorelCorpID_0Corel-Layer"/>
+			  <path fill="#58B1E0" d="M3358 1143l0 0c100,0 182,82 182,182l0 1066 390 0c15,0 29,13 29,29l0 0c0,15 -14,29 -29,29l-3658 0c-16,0 -29,-14 -29,-29l0 0c0,-16 13,-29 29,-29l389 0 0 -576c0,-140 115,-255 255,-255l0 0c140,0 255,115 255,255l0 576 175 0 0 -1354c0,-123 101,-223 223,-223l0 0c123,0 223,100 223,223l0 1354 176 0 0 -1615c0,-122 100,-223 223,-223l0 0c122,0 223,101 223,223l0 1615 175 0 0 -1515c0,-113 93,-205 206,-205l0 0c113,0 205,92 205,205l0 1515 176 0 0 -1066c0,-100 82,-182 182,-182zm-3206 1248l-123 0c-16,0 -29,13 -29,29l0 0c0,15 13,29 29,29l123 0c16,0 29,-14 29,-29l0 0c0,-16 -13,-29 -29,-29z"/>
+			  <path fill="#FEFBF6" d="M1421 2391l313 0 0 -1354c0,-88 -70,-160 -156,-165 -87,5 -157,77 -157,165l0 1354z"/>
+			  <path fill="#EEF7FB" d="M1543 874c-78,13 -139,81 -139,163l0 1354 278 0 0 -1354c0,-82 -61,-150 -139,-163z"/>
+			  <path fill="#FEFBF6" d="M1569 872c-90,0 -165,74 -165,165l0 1354 17 0 0 -1354c0,-88 70,-160 157,-165 -3,0 -6,0 -9,0z"/>
+			  <path fill="#F9F9F9" d="M916 1618l0 0c108,0 197,89 197,197l0 576 -394 0 0 -576c0,-108 89,-197 197,-197z"/>
+			  <path fill="#EEF7FB" d="M1077 2391l-336 0 0 -576c0,-98 74,-180 168,-194 95,14 168,96 168,194l0 576z"/>
+			  <path fill="#FEFBF6" d="M2191 611c-91,0 -165,74 -165,165l0 1615 330 0 0 -1615c0,-91 -75,-165 -165,-165z"/>
+			  <path fill="#EEF7FB" d="M2182 613c-80,11 -142,80 -142,163l0 1615 285 0 0 -1615c0,-83 -62,-152 -143,-163z"/>
+			  <path fill="#FEFBF6" d="M2795 729c-81,0 -148,66 -148,147l0 1515 295 0 0 -1515c0,-81 -66,-147 -147,-147z"/>
+			  <path fill="#EEF7FB" d="M2789 731c-70,11 -124,72 -124,145l0 1515 235 0 0 -1515c0,-73 -41,-134 -111,-145z"/>
+			  <path fill="#FEFBF6" d="M3358 1201c-68,0 -124,56 -124,124l0 1066 248 0 0 -1066c0,-68 -56,-124 -124,-124z"/>
+			  <path fill="#EEF7FB" d="M3355 1202c-61,7 -110,60 -110,123l0 1066 220 0 0 -1066c0,-63 -48,-116 -110,-123z"/>
+			  <path fill="#58B1E0" d="M967 2224l-251 0c-7,0 -13,6 -13,14l0 0c0,7 6,13 13,13l251 0c7,0 13,-6 13,-13l0 0c0,-8 -6,-14 -13,-14zm1706 -690l25 0c7,0 13,6 13,13l0 0c0,8 -6,14 -13,14l-25 0c-8,0 -14,-6 -14,-14l0 0c0,-7 6,-13 14,-13zm93 0l210 0c7,0 13,6 13,13l0 0c0,8 -6,14 -13,14l-210 0c-7,0 -14,-6 -14,-14l0 0c0,-7 7,-13 14,-13zm-693 -126l25 0c8,0 14,6 14,13l0 0c0,8 -6,14 -14,14l-25 0c-8,0 -14,-6 -14,-14l0 0c0,-7 6,-13 14,-13zm94 0l209 0c8,0 14,6 14,13l0 0c0,8 -6,14 -14,14l-209 0c-8,0 -14,-6 -14,-14l0 0c0,-7 6,-13 14,-13zm-476 167l-25 0c-7,0 -14,7 -14,14l0 0c0,8 7,14 14,14l25 0c8,0 14,-6 14,-14l0 0c0,-7 -6,-14 -14,-14zm-93 0l-210 0c-7,0 -14,7 -14,14l0 0c0,8 7,14 14,14l210 0c7,0 13,-6 13,-14l0 0c0,-7 -6,-14 -13,-14zm-103 -523c17,0 31,13 31,30 0,17 -14,30 -31,30 -16,0 -30,-13 -30,-30 0,-17 14,-30 30,-30zm1970 451c-29,25 -66,40 -107,40 -41,0 -78,-15 -107,-40 -23,-19 1,-42 18,-26 25,22 56,34 89,34 33,0 64,-12 88,-34 18,-16 42,7 19,26zm-165 -162c21,0 37,17 37,38 0,21 -16,38 -37,38 -21,0 -38,-17 -38,-38 0,-21 17,-38 38,-38zm116 0c21,0 38,17 38,38 0,21 -17,38 -38,38 -21,0 -38,-17 -38,-38 0,-21 17,-38 38,-38zm-503 -288c-32,27 -73,43 -117,43 -45,0 -86,-16 -117,-43 -25,-22 1,-46 20,-29 27,24 60,37 97,37 36,0 70,-13 96,-37 20,-17 46,7 21,29zm-181 -177c23,0 41,18 41,41 0,23 -18,41 -41,41 -22,0 -41,-18 -41,-41 0,-23 19,-41 41,-41zm127 0c23,0 41,18 41,41 0,23 -18,41 -41,41 -22,0 -41,-18 -41,-41 0,-23 19,-41 41,-41zm-532 241c-36,32 -84,51 -136,51 -52,0 -100,-19 -137,-51 -29,-25 2,-54 24,-33 31,27 70,43 113,43 42,0 81,-16 112,-43 23,-21 53,8 24,33zm-62 -196c20,0 37,17 37,38 0,20 -17,37 -37,37 -21,0 -37,-17 -37,-37 0,-21 16,-38 37,-38zm-148 -10c26,0 48,21 48,48 0,26 -22,48 -48,48 -27,0 -48,-22 -48,-48 0,-27 21,-48 48,-48zm-411 329c-37,32 -85,51 -137,51 -52,0 -99,-19 -136,-51 -29,-25 1,-53 24,-33 31,28 70,43 112,43 43,0 82,-15 113,-43 23,-20 53,8 24,33zm-63 -188c17,0 31,13 31,30 0,17 -14,30 -31,30 -16,0 -30,-13 -30,-30 0,-17 14,-30 30,-30zm-49 1034l-27 0c-5,0 -8,3 -8,7l0 0c0,5 3,8 8,8l27 0c5,0 8,-3 8,-8l0 0c0,-4 -3,-7 -8,-7zm-85 0l-117 0c-5,0 -8,3 -8,7l0 0c0,5 3,8 8,8l117 0c4,0 8,-3 8,-8l0 0c0,-4 -4,-7 -8,-7zm1822 217l28 0c4,0 7,3 7,8l0 0c0,4 -3,7 -7,7l-28 0c-4,0 -8,-3 -8,-7l0 0c0,-5 4,-8 8,-8zm59 0l118 0c4,0 7,3 7,8l0 0c0,4 -3,7 -7,7l-118 0c-4,0 -8,-3 -8,-7l0 0c0,-5 4,-8 8,-8zm-640 -258l28 0c4,0 8,4 8,8l0 0c0,4 -4,8 -8,8l-28 0c-4,0 -7,-4 -7,-8l0 0c0,-4 3,-8 7,-8zm85 0l118 0c4,0 8,4 8,8l0 0c0,4 -4,8 -8,8l-118 0c-4,0 -7,-4 -7,-8l0 0c0,-4 3,-8 7,-8zm444 205l49 0c7,0 13,6 13,14l0 0c0,7 -6,14 -13,14l-49 0c-8,0 -14,-7 -14,-14l0 0c0,-8 6,-14 14,-14zm101 0l126 0c7,0 14,6 14,14l0 0c0,7 -7,14 -14,14l-126 0c-7,0 -14,-7 -14,-14l0 0c0,-8 7,-14 14,-14zm65 -457l-25 0c-8,0 -14,6 -14,13l0 0c0,8 6,14 14,14l25 0c8,0 14,-6 14,-14l0 0c0,-7 -6,-13 -14,-13zm-94 0l-133 0c-8,0 -14,6 -14,13l0 0c0,8 6,14 14,14l133 0c8,0 14,-6 14,-14l0 0c0,-7 -6,-13 -14,-13zm-446 198l-30 0c-7,0 -14,6 -14,14l0 0c0,7 7,14 14,14l30 0c7,0 14,-7 14,-14l0 0c0,-8 -7,-14 -14,-14zm-82 0l-209 0c-8,0 -14,6 -14,14l0 0c0,7 6,14 14,14l209 0c8,0 14,-7 14,-14l0 0c0,-8 -6,-14 -14,-14zm-599 -81l-28 0c-4,0 -7,4 -7,8l0 0c0,4 3,8 7,8l28 0c4,0 8,-4 8,-8l0 0c0,-4 -4,-8 -8,-8zm-85 0l-118 0c-4,0 -8,4 -8,8l0 0c0,4 4,8 8,8l118 0c4,0 8,-4 8,-8l0 0c0,-4 -4,-8 -8,-8zm186 -45l-49 0c-7,0 -14,6 -14,14l0 0c0,8 7,14 14,14l49 0c8,0 14,-6 14,-14l0 0c0,-8 -6,-14 -14,-14zm-101 0l-210 0c-7,0 -13,6 -13,14l0 0c0,8 6,14 13,14l210 0c7,0 14,-6 14,-14l0 0c0,-8 -7,-14 -14,-14zm-785 168l49 0c8,0 14,6 14,14l0 0c0,7 -6,14 -14,14l-49 0c-8,0 -14,-7 -14,-14l0 0c0,-8 6,-14 14,-14zm101 0l210 0c7,0 14,6 14,14l0 0c0,7 -7,14 -14,14l-210 0c-7,0 -13,-7 -13,-14l0 0c0,-8 6,-14 13,-14zm-482 -25c-38,33 -88,53 -142,53 -54,0 -104,-20 -142,-53 -31,-26 1,-56 25,-35 32,29 73,45 117,45 44,0 85,-16 117,-45 24,-21 56,9 25,35zm-219 -215c28,0 50,22 50,50 0,27 -22,50 -50,50 -28,0 -50,-23 -50,-50 0,-28 22,-50 50,-50zm154 0c28,0 50,22 50,50 0,27 -22,50 -50,50 -27,0 -50,-23 -50,-50 0,-28 23,-50 50,-50zm80 431l-25 0c-8,0 -14,6 -14,14l0 0c0,7 6,13 14,13l25 0c7,0 13,-6 13,-13l0 0c0,-8 -6,-14 -13,-14z"/>
+			  <path fill="#58B1E0" d="M842 838l63 0 0 -63c0,-13 10,-23 23,-23l0 0c13,0 24,10 24,23l0 63 63 0c13,0 23,11 23,24l0 0c0,13 -10,23 -23,23l-63 0 0 63c0,13 -11,23 -24,23l0 0c-13,0 -23,-10 -23,-23l0 -63 -63 0c-13,0 -23,-10 -23,-23l0 0c0,-13 10,-24 23,-24z"/>
+			  <path fill="#FCE99A" d="M1018 1358l49 0 0 -49c0,-10 8,-18 18,-18l0 0c10,0 19,8 19,18l0 49 48 0c10,0 19,8 19,18l0 0c0,10 -9,18 -19,18l-48 0 0 49c0,10 -9,18 -19,18l0 0c-10,0 -18,-8 -18,-18l0 -49 -49 0c-10,0 -18,-8 -18,-18l0 0c0,-10 8,-18 18,-18z"/>
+			  <path fill="#58B1E0" d="M2274 211l49 0 0 -49c0,-10 8,-18 18,-18l0 0c10,0 18,8 18,18l0 49 49 0c10,0 18,8 18,18l0 0c0,10 -8,18 -18,18l-49 0 0 49c0,10 -8,18 -18,18l0 0c-10,0 -18,-8 -18,-18l0 -49 -49 0c-10,0 -18,-8 -18,-18l0 0c0,-10 8,-18 18,-18z"/>
+			  <path fill="#FCE99A" d="M1782 567l49 0 0 -48c0,-10 8,-19 18,-19l0 0c10,0 18,9 18,19l0 48 49 0c10,0 18,9 18,19l0 0c0,10 -8,18 -18,18l-49 0 0 49c0,10 -8,18 -18,18l0 0c-10,0 -18,-8 -18,-18l0 -49 -49 0c-10,0 -18,-8 -18,-18l0 0c0,-10 8,-19 18,-19z"/>
+			  <path fill="#58B1E0" d="M1337 67l49 0 0 -49c0,-10 8,-18 18,-18l0 0c11,0 19,8 19,18l0 49 48 0c10,0 19,8 19,18l0 0c0,10 -9,19 -19,19l-48 0 0 48c0,10 -8,19 -19,19l0 0c-10,0 -18,-9 -18,-19l0 -48 -49 0c-10,0 -18,-9 -18,-19l0 0c0,-10 8,-18 18,-18z"/>
+			  <path fill="#58B1E0" d="M3347 719l62 0 0 -62c0,-13 11,-24 24,-24l0 0c13,0 24,11 24,24l0 62 62 0c13,0 24,11 24,24l0 0c0,13 -11,23 -24,23l-62 0 0 63c0,13 -11,24 -24,24l0 0c-13,0 -24,-11 -24,-24l0 -63 -62 0c-13,0 -24,-10 -24,-23l0 0c0,-13 11,-24 24,-24z"/>
+			  <path fill="#FCE99A" d="M3747 1601l49 0 0 -49c0,-10 8,-18 18,-18l0 0c10,0 18,8 18,18l0 49 49 0c10,0 18,8 18,18l0 0c0,10 -8,18 -18,18l-49 0 0 49c0,10 -8,18 -18,18l0 0c-10,0 -18,-8 -18,-18l0 -49 -49 0c-10,0 -18,-8 -18,-18l0 0c0,-10 8,-18 18,-18z"/>
+			  <path fill="#FCE99A" d="M2997 85l49 0 0 -48c0,-10 8,-19 18,-19l0 0c11,0 19,9 19,19l0 48 48 0c10,0 19,9 19,19l0 0c0,10 -9,18 -19,18l-48 0 0 49c0,10 -8,18 -19,18l0 0c-10,0 -18,-8 -18,-18l0 -49 -49 0c-10,0 -18,-8 -18,-18l0 0c0,-10 8,-19 18,-19z"/>
+			 </g>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--12-col-tablet mdl-cell--order-1-desktop">
+                <div class="box-text-features">
+                  <div class="line"></div>
+                  <div class="title">
+                    Social Interaction
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur
+                    adipisicing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip
+                    ex ea commodo consequat.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="mdl-grid box-features-2">
+              <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--12-col-tablet mdl-cell--order-1-desktop">
+                <div class="box-image-features-l">
+                  <div class="worm">
+                    <div class="illustration_2">
+		    <div class="il2">
+                      <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="85%" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 544 544" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="Layer_x0020_1">
+			  <metadata id="CorelCorpID_0Corel-Layer"/>
+			  <g id="_406135690112">
+			   <g>
+			    <path fill="#DBEEFA" d="M448 214c-39,172 -123,65 -171,66 -50,1 -130,104 -169,-66 89,-51 114,23 170,26 56,-3 81,-77 170,-26zm-120 49c0,0 15,-30 56,-26 0,0 -12,55 -56,26zm-100 0c0,0 -15,-30 -56,-26 0,0 12,55 56,26z"/>
+			    <path fill="#58B1E0" d="M47 411l462 0c2,0 4,1 4,3l0 0c0,2 -2,4 -4,4l-462 0c-3,0 -4,-2 -4,-4l0 0c0,-2 1,-3 4,-3z"/>
+			    <path fill="#58B1E0" d="M524 411l16 0c2,0 4,1 4,3l0 0c0,2 -2,4 -4,4l-16 0c-2,0 -3,-2 -3,-4l0 0c0,-2 1,-3 3,-3z"/>
+			    <path fill="#58B1E0" d="M5 411l26 0c2,0 4,1 4,3l0 0c0,2 -2,4 -4,4l-26 0c-2,0 -4,-2 -4,-4l0 0c0,-2 2,-3 4,-3z"/>
+			    <path fill="#58B1E0" d="M86 207l8 0 0 -8c0,-1 1,-3 2,-3l0 0c2,0 3,2 3,3l0 8 8 0c2,0 3,2 3,3l0 0c0,2 -1,3 -3,3l-8 0 0 8c0,2 -1,3 -3,3l0 0c-1,0 -2,-1 -2,-3l0 -8 -8 0c-2,0 -3,-1 -3,-3l0 0c0,-1 1,-3 3,-3z"/>
+			    <path fill="#FCE99A" d="M186 212l6 0 0 -6c0,-2 1,-3 2,-3l0 0c2,0 3,1 3,3l0 6 6 0c1,0 2,1 2,2l0 0c0,1 -1,2 -2,2l-6 0 0 6c0,2 -1,3 -3,3l0 0c-1,0 -2,-1 -2,-3l0 -6 -6 0c-1,0 -2,-1 -2,-2l0 0c0,-1 1,-2 2,-2z"/>
+			    <path fill="#58B1E0" d="M255 160l6 0 0 -6c0,-1 1,-2 2,-2l0 0c1,0 2,1 2,2l0 6 7 0c1,0 2,1 2,2l0 0c0,2 -1,3 -2,3l-7 0 0 6c0,1 -1,2 -2,2l0 0c-1,0 -2,-1 -2,-2l0 -6 -6 0c-2,0 -3,-1 -3,-3l0 0c0,-1 1,-2 3,-2z"/>
+			    <path fill="#FCE99A" d="M143 135l6 0 0 -6c0,-1 1,-2 2,-2l0 0c2,0 3,1 3,2l0 6 6 0c1,0 2,1 2,2l0 0c0,2 -1,3 -2,3l-6 0 0 6c0,1 -1,2 -3,2l0 0c-1,0 -2,-1 -2,-2l0 -6 -6 0c-1,0 -2,-1 -2,-3l0 0c0,-1 1,-2 2,-2z"/>
+			    <path fill="#58B1E0" d="M289 227l6 0 0 -7c0,-1 1,-2 3,-2l0 0c1,0 2,1 2,2l0 7 6 0c1,0 2,1 2,2l0 0c0,1 -1,2 -2,2l-6 0 0 6c0,2 -1,3 -2,3l0 0c-2,0 -3,-1 -3,-3l0 -6 -6 0c-1,0 -2,-1 -2,-2l0 0c0,-1 1,-2 2,-2z"/>
+			    <path fill="#58B1E0" d="M345 137l8 0 0 -7c0,-2 1,-3 3,-3l0 0c2,0 3,1 3,3l0 7 8 0c2,0 3,2 3,3l0 0c0,2 -1,3 -3,3l-8 0 0 8c0,2 -1,3 -3,3l0 0c-2,0 -3,-1 -3,-3l0 -8 -8 0c-1,0 -3,-1 -3,-3l0 0c0,-1 2,-3 3,-3z"/>
+			    <path fill="#58B1E0" d="M467 229l8 0 0 -8c0,-1 1,-3 3,-3l0 0c2,0 3,2 3,3l0 8 8 0c2,0 3,1 3,3l0 0c0,2 -1,3 -3,3l-8 0 0 8c0,2 -1,3 -3,3l0 0c-2,0 -3,-1 -3,-3l0 -8 -8 0c-1,0 -3,-1 -3,-3l0 0c0,-2 2,-3 3,-3z"/>
+			    <path fill="#FCE99A" d="M378 196l6 0 0 -6c0,-2 1,-3 2,-3l0 0c1,0 2,1 2,3l0 6 7 0c1,0 2,1 2,2l0 0c0,1 -1,2 -2,2l-7 0 0 7c0,1 -1,2 -2,2l0 0c-1,0 -2,-1 -2,-2l0 -7 -6 0c-2,0 -3,-1 -3,-2l0 0c0,-1 1,-2 3,-2z"/>
+			    <path fill="#FCE99A" d="M501 336l7 0 0 -6c0,-2 1,-3 2,-3l0 0c1,0 2,1 2,3l0 6 6 0c2,0 3,1 3,2l0 0c0,1 -1,2 -3,2l-6 0 0 7c0,1 -1,2 -2,2l0 0c-1,0 -2,-1 -2,-2l0 -7 -7 0c-1,0 -2,-1 -2,-2l0 0c0,-1 1,-2 2,-2z"/>
+			    <path fill="#58B1E0" d="M238 310l8 0 0 -7c0,-2 2,-3 3,-3l0 0c2,0 3,1 3,3l0 7 8 0c2,0 3,2 3,3l0 0c0,2 -1,3 -3,3l-8 0 0 8c0,2 -1,3 -3,3l0 0c-1,0 -3,-1 -3,-3l0 -8 -8 0c-1,0 -3,-1 -3,-3l0 0c0,-1 2,-3 3,-3z"/>
+			    <path fill="#58B1E0" d="M104 258c-12,0 -23,11 -23,23l0 114c0,13 11,23 23,23 17,0 29,0 46,0l7 0 0 -6 17 0c13,0 23,-10 23,-22l0 -109c0,-12 -10,-23 -23,-23 -24,0 -45,0 -70,0z"/>
+			    <path fill="#EDEDED" d="M104 266c-8,0 -15,7 -15,15l0 114c0,9 7,16 15,16 17,0 29,0 46,0l0 -6 24 0c9,0 16,-7 16,-15l0 -109c0,-8 -7,-15 -16,-15 -24,0 -45,0 -70,0z"/>
+			    <path fill="#F9F9F9" d="M104 266c-8,0 -15,7 -15,15l0 62c13,29 41,48 74,48 10,0 19,-1 27,-4l0 -106c0,-8 -7,-15 -16,-15 -24,0 -45,0 -70,0z"/>
+			    <path fill="#58B1E0" d="M196 280c13,0 23,10 23,23l0 92c0,13 -10,23 -23,23 -17,0 -33,0 -50,0l-7 0 0 -7 0 -88 0 -17 0 -3c0,-13 10,-23 23,-23l1 0 13 0 20 0z"/>
+			    <path fill="#FEFBF6" d="M196 287c9,0 16,7 16,16l0 92c0,9 -7,16 -16,16 -17,0 -33,0 -50,0l0 -88 0 -14 0 -6c0,-9 7,-16 16,-16l5 0 0 0 29 0z"/>
+			    <path fill="#FEFBF6" d="M149 411l-3 0 0 -88 0 -14 0 -6c0,-9 7,-16 16,-16l2 0c-8,0 -15,7 -15,16l0 6 0 14 0 88z"/>
+			    <path fill="#EEF7FB" d="M191 287c8,0 15,7 15,16l0 92c0,9 -7,16 -15,16 -17,0 -26,0 -42,0l0 -88 0 -14 0 -6c0,-9 7,-16 15,-16l6 0 0 0 21 0z"/>
+			    <rect fill="#58B1E0" x="198" y="376" width="18.4398" height="7.32882" rx="4" ry="4"/>
+			    <path fill="#58B1E0" d="M354 368l0 -88 51 0c38,0 69,31 69,69 0,38 -31,69 -69,69l-61 0c1,0 1,-1 1,-1 0,-2 -3,-4 -6,-5l5 -40 3 -1c2,-1 4,-2 7,-3z"/>
+			    <path fill="#EDEDED" d="M467 349l0 0c0,34 -28,62 -62,62l-19 0 -25 0 -15 0 4 -34c0,0 5,-2 11,-4l0 -86 44 0c34,0 62,28 62,62z"/>
+			    <path fill="#F9F9F9" d="M467 349l0 0c0,3 0,5 -1,8 -10,22 -33,37 -59,37 -19,0 -36,-8 -48,-20l2 -1 0 -86 44 0c34,0 62,28 62,62z"/>
+			    <path fill="#58B1E0" d="M402 280l0 62c0,6 0,12 0,18 -3,16 -12,26 -29,26 -5,0 -9,4 -9,9 0,11 18,16 23,16l-7 7 -35 0c-13,0 -23,-10 -23,-23l0 -92c0,-13 10,-23 23,-23l57 0z"/>
+			    <path fill="#FEFBF6" d="M395 287l-50 0c-9,0 -16,7 -16,16l0 92c0,9 7,16 16,16l28 0c-9,0 -16,-8 -16,-16 0,-9 7,-16 16,-16 24,0 22,-25 22,-37l0 -55z"/>
+			    <path fill="#EEF7FB" d="M392 287l-44 0c-9,0 -16,7 -16,16l0 92c0,9 7,16 16,16l22 0c-9,0 -16,-8 -16,-16 0,-9 7,-18 16,-18 24,0 22,-23 22,-35l0 -55z"/>
+			    <ellipse fill="#58B1E0" cx="345" cy="333" rx="6" ry="16"/>
+			    <rect fill="#58B1E0" x="324" y="376" width="18.4398" height="7.32882" rx="4" ry="4"/>
+			    <ellipse fill="#58B1E0" cx="194" cy="333" rx="6" ry="16"/>
+			   </g>
+			   <rect fill="none" width="544" height="544"/>
+			  </g>
+			 </g>
+                      </svg>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--12-col-tablet mdl-cell--order-2-desktop">
+                <div class="box-text-features-l">
+                  <div class="title">
+                    Privacy
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur
+                    adipisicing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip
+                    ex ea commodo consequat.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="mdl-grid box-features-3">
+              <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--12-col-tablet mdl-cell--order-2-desktop">
+                <div class="box-image-features">
+                  <div class="worm">
+                    <div class="illustration_3">
+                      <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" viewBox="0 0 914 914" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <g id="Layer_x0020_1">
+			  <metadata id="CorelCorpID_0Corel-Layer"/>
+			  <g id="_405918422480">
+			   <rect fill="none" width="914" height="914"/>
+			   <g>
+			    <path fill="#58B1E0" d="M710 414c0,21 -11,41 -30,51 -10,5 -20,10 -30,15 -9,4 -18,6 -28,6 -17,0 -33,-7 -45,-19l0 0 -1 -1 0 0 -1 -1 0 -1 -1 0c0,0 0,0 0,-1l0 0c-10,-11 -15,-25 -15,-40 0,-32 24,-59 56,-63l0 0c1,0 1,0 1,0l30 -3c2,0 4,-1 7,-1 31,0 57,26 57,58z"/>
+			    <path fill="#EDEDED" d="M653 362c29,0 52,23 52,52 0,21 -12,39 -30,47l0 0 -28 14 -2 -10c-25,-3 -44,-25 -44,-51 0,-15 7,-29 17,-39l-3 -9 32 -4 0 0c2,0 4,0 6,0z"/>
+			    <path fill="#F9F9F9" d="M653 362c12,0 24,4 33,11 2,6 3,12 3,18 0,25 -20,46 -45,46 -19,0 -36,-12 -43,-29 2,-13 8,-24 17,-33l-3 -9 32 -4 0 0c2,0 4,0 6,0z"/>
+			    <path fill="#F9F9F9" d="M622 365c32,0 55,27 55,59 0,32 -23,57 -55,57 -32,0 -58,-26 -58,-58 0,-32 26,-58 58,-58z"/>
+			    <path fill="#D4EBF7" d="M581 464c-1,-1 -2,-3 -3,-4l42 -39c1,-1 3,-1 4,0 1,1 1,3 0,4l-43 39z"/>
+			    <circle fill="#58B1E0" cx="621" cy="424" r="54"/>
+			    <circle fill="#D4EBF7" cx="621" cy="424" r="50"/>
+			    <path fill="#58B1E0" d="M582 456l38 -35c1,-1 3,-1 4,0 1,1 1,3 0,4l-38 35c-1,-2 -2,-3 -4,-4z"/>
+			    <path fill="#FCE99A" fill-rule="nonzero" d="M421 485c-1,0 -3,-1 -3,-2 -1,-2 0,-3 2,-4l74 -21c1,-1 3,0 3,2l0 0 0 0 4 16 3 -20c1,-1 1,-2 3,-2l4 -2 6 -62c1,-2 2,-3 3,-3 2,1 3,2 3,3l0 0 0 0 7 57 91 -27c2,0 3,1 4,2 0,2 -1,3 -2,4l-94 27c0,0 -1,0 -1,0 -1,0 -3,-1 -3,-2l-4 -36 -4 40c0,1 -1,2 -2,2l-5 2 -6 32c0,1 -1,2 -2,2 -2,0 -3,-1 -3,-2l-7 -27 -71 21z"/>
+			    <ellipse fill="#DBEEFA" cx="645" cy="532" rx="87" ry="10"/>
+			    <path fill="#58B1E0" d="M368 632c-34,17 -69,36 -106,36 -76,0 -138,-62 -138,-138 0,-65 46,-121 108,-134l15 -3 58 -6c6,0 12,-1 18,-1 9,-1 11,-1 19,0 64,6 113,60 113,124 0,45 -24,85 -61,108 -9,5 -18,9 -26,14zm-23 -15l19 -9 0 0 9 -5c36,-16 59,-53 59,-93 0,-53 -40,-97 -92,-102l-8 -1 -8 1c-6,0 -11,1 -17,1l-14 2 1 0 1 1 1 0 2 0 1 1 1 0 2 1 1 0 1 1 1 0 0 0 1 1 2 0 0 1c1,0 2,1 3,1l2 1c1,0 2,1 3,2l1 0 1 1 2 1 0 0 2 1 2 1 0 0 2 2 0 0 2 1 1 1 1 0 1 1c1,1 2,2 3,3l1 0 1 2 2 1 1 1 2 2 1 1 0 0 2 2 0 0 2 1 1 2 2 1 1 2 2 2 1 2 1 1 1 1 0 1 1 0 1 2 1 2 1 1 1 1 1 1 0 1 1 2 1 0 0 2 1 0 0 2 1 0 1 2 0 1 1 1 0 1 1 1 0 1 1 1 1 2 0 1 1 1 0 1 0 1 1 1 0 1 1 1 0 1 0 1 1 1 0 1 0 1 1 2 0 2 1 0 0 2 0 1 1 1 0 2 0 1 1 1 0 1 0 1 1 2 0 3 0 2 0 0 0 1c1,1 1,2 1,3l0 3 0 2 0 2 1 3 0 2 0 0c0,1 0,1 0,2 0,1 0,2 0,3l0 1c0,0 0,1 -1,2l0 1c0,1 0,1 0,2l0 1c0,1 0,2 0,3l0 0c0,1 0,2 0,3l0 0 -1 3 0 1 0 2 0 0 0 0c0,1 -1,2 -1,3l0 0 0 3 -1 1 0 2 0 1 -1 2 0 1 -1 2 0 0 -1 3 -1 2 0 2 -1 1 0 1 -1 2 0 1 -1 2 -1 1 0 2 -1 1 0 0c-1,1 -1,2 -2,3l0 1 -1 2 0 0 -1 2 -1 1 -1 1 -1 2c-2,3 -4,6 -6,9l0 0c-1,1 -1,2 -2,2l0 1c-3,3 -5,6 -8,8z"/>
+			    <circle fill="#EDEDED" cx="330" cy="510" r="114"/>
+			    <path fill="#EDEDED" d="M247 405l70 -8 48 219 13 -3 -59 30 -72 -238z"/>
+			    <path fill="#F9F9F9" d="M247 405l70 -8 45 202c-12,17 -27,31 -44,42l-71 -236z"/>
+			    <path fill="#F9F9F9" d="M262 404c7,0 15,0 22,2 14,-6 30,-10 46,-10 13,0 26,3 37,7 18,27 28,59 28,94 0,20 -3,39 -9,57 -11,58 -63,102 -124,102 -70,0 -127,-56 -127,-126 0,-70 57,-126 127,-126z"/>
+			    <circle fill="#58B1E0" cx="256" cy="530" r="114"/>
+			    <circle fill="#EEF7FB" cx="256" cy="530" r="103"/>
+			    <path fill="#58B1E0" d="M256 416c17,0 33,4 48,11 7,16 12,34 12,54 0,69 -57,126 -127,126 -6,0 -12,0 -18,-1 -18,-20 -29,-47 -29,-76 0,-63 51,-114 114,-114z"/>
+			    <path fill="#FEFBF6" d="M310 443c4,12 6,25 6,38 0,69 -57,126 -127,126 0,0 -1,0 -1,0 -22,-19 -35,-46 -35,-77 0,-57 46,-103 103,-103 20,0 38,6 54,16z"/>
+			    <path fill="#58B1E0" d="M306 428c38,19 64,57 64,102 0,34 -15,64 -39,85 -29,-17 -50,-57 -50,-105 0,-32 10,-61 25,-82z"/>
+			    <ellipse fill="#B3DBF3" cx="291" cy="739" rx="174" ry="21"/>
+			    <path fill="#58B1E0" d="M157 310l12 0 0 -12c0,-2 2,-4 5,-4l0 0c2,0 4,2 4,4l0 12 12 0c3,0 5,3 5,5l0 0c0,2 -2,5 -5,5l-12 0 0 12c0,2 -2,4 -4,4l0 0c-3,0 -5,-2 -5,-4l0 -12 -12 0c-2,0 -4,-3 -4,-5l0 0c0,-2 2,-5 4,-5z"/>
+			    <path fill="#58B1E0" d="M490 216l9 0 0 -9c0,-2 2,-4 4,-4l0 0c2,0 3,2 3,4l0 9 10 0c2,0 3,2 3,3l0 0c0,2 -1,4 -3,4l-10 0 0 9c0,2 -1,4 -3,4l0 0c-2,0 -4,-2 -4,-4l0 -9 -9 0c-2,0 -4,-2 -4,-4l0 0c0,-1 2,-3 4,-3z"/>
+			    <path fill="#FCE99A" d="M303 167l9 0 0 -9c0,-2 2,-4 4,-4l0 0c2,0 3,2 3,4l0 9 10 0c2,0 3,1 3,3l0 0c0,2 -1,4 -3,4l-10 0 0 9c0,2 -1,4 -3,4l0 0c-2,0 -4,-2 -4,-4l0 -9 -9 0c-2,0 -4,-2 -4,-4l0 0c0,-2 2,-3 4,-3z"/>
+			    <path fill="#FCE99A" d="M622 178l9 0 0 -10c0,-2 2,-3 4,-3l0 0c2,0 3,1 3,3l0 10 10 0c1,0 3,1 3,3l0 0c0,2 -2,4 -3,4l-10 0 0 9c0,2 -1,3 -3,3l0 0c-2,0 -4,-1 -4,-3l0 -9 -9 0c-2,0 -4,-2 -4,-4l0 0c0,-2 2,-3 4,-3z"/>
+			    <path fill="#58B1E0" d="M422 318l12 0 0 -12c0,-3 2,-5 5,-5l0 0c2,0 4,2 4,5l0 12 12 0c3,0 5,2 5,4l0 0c0,3 -2,5 -5,5l-12 0 0 12c0,2 -2,5 -4,5l0 0c-3,0 -5,-3 -5,-5l0 -12 -12 0c-2,0 -4,-2 -4,-5l0 0c0,-2 2,-4 4,-4z"/>
+			    <path fill="#58B1E0" d="M545 602l12 0 0 -12c0,-2 2,-4 4,-4l0 0c3,0 5,2 5,4l0 12 12 0c2,0 4,2 4,5l0 0c0,2 -2,4 -4,4l-12 0 0 12c0,3 -2,5 -5,5l0 0c-2,0 -4,-2 -4,-5l0 -12 -12 0c-3,0 -5,-2 -5,-4l0 0c0,-3 2,-5 5,-5z"/>
+			    <path fill="#FCE99A" d="M692 293l10 0 0 -9c0,-2 1,-4 3,-4l0 0c2,0 4,2 4,4l0 9 9 0c2,0 3,2 3,4l0 0c0,2 -1,3 -3,3l-9 0 0 10c0,2 -2,3 -4,3l0 0c-2,0 -3,-1 -3,-3l0 -10 -10 0c-2,0 -3,-1 -3,-3l0 0c0,-2 1,-4 3,-4z"/>
+			    <path fill="#58B1E0" d="M768 385l9 0 0 -10c0,-1 2,-3 4,-3l0 0c1,0 3,2 3,3l0 10 9 0c2,0 4,1 4,3l0 0c0,2 -2,4 -4,4l-9 0 0 9c0,2 -2,4 -3,4l0 0c-2,0 -4,-2 -4,-4l0 -9 -9 0c-2,0 -4,-2 -4,-4l0 0c0,-2 2,-3 4,-3z"/>
+			   </g>
+			  </g>
+			 </g>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mdl-cell mdl-cell--6-col-desktop mdl-cell--12-col-tablet mdl-cell--order-1-desktop">
+                <div class="box-text-features">
+                  <div class="title">
+                    People Connection
+                  </div>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur
+                    adipisicing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip
+                    ex ea commodo consequat.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wave-foo">
+            <svg viewBox="0 0 410 65" width="100%" preserveAspectRatio="none">
+                <path class="xy" d="M410 0l0 83 -410 0 0 -73c67,7 105,45 176,45 88,0 136,-55 234,-55z"/>
+              </svg>
+          </div>
+          <footer class="mdl-mini-footer background-footer">
+            <div class="social-content">
+              <a href="https://facebook.com" class="icon-social">
+                <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+              </a>
+              <a href="https://instagram.com" class="icon-social">
+                <i class="fa fa-instagram fa-2x" aria-hidden="true"></i>
+              </a>
+              <a href="https://twitter.com" class="icon-social">
+                <i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i>
+              </a>
+            </div>
+            <div class="text-email">
+              cs@sheetup.com
+            </div>
+            <div class="text-copyright">
+              <p>&copy 2017 Sheetup. All Right Reserved.<br>Powered By <a href="https://mascode.id" target="_blank">mascode.id</a></p>
+            </div>
+          </footer>
+        </main>
+
+      </div>
+    </div>
+    <script src="sheetup/js/sheetup.js"></script>
+</body>
+</html>
